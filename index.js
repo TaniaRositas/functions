@@ -2,7 +2,8 @@
 
 ////////////////////////
 //// importar librerias
-const functions = require("firebase-functions");
+
+//const functions = require("firebase-functions");
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -205,17 +206,20 @@ if (!respuestaEnviada) {
 
 //////////////////////////////////////////   codigo para fire base 
 /////////////////////////////////////////
-const local = true;    // para ejecuatr el servidor local= true     ///para firebase=false 
-if (local) {
-  server.listen((process.env.PORT || 8000), () => {
-    console.log("Servidor funcionando...");         // si se ve en la terminal funciona 
-  })
-} else {
-  exports.curso = functions.https.onRequest(server);
-}
+// const local = false;    // para ejecuatr el servidor local= true     ///para firebase=false 
+// if (local) {
+//   server.listen((process.env.PORT || 8000), () => {
+//     console.log("Servidor funcionando...");         // si se ve en la terminal funciona 
+//   })
+// } else {
+//   exports.curso = functions.https.onRequest(server);
+// }
 ////////////////////////////////////////////////////
 ////////////////////////////////////////////////
 
+server.listen((process.env.PORT || 3000), () => {
+  console.log("Servidor funcionando...");         // si se ve en la terminal funciona 
+})
 
 
 
@@ -240,84 +244,5 @@ if (local) {
 
 
 
-//   res.json(resultado);
-// });
-  
-//   let opciones=["chistes","consejo","noticias","mi equipo"]
-//   try {                                                /// todo el try es de postman 
-//     contexto=req.body.queryResult.action;
-//     resultado='recibida peticion de action: ${contexto}'; 
-//   } catch(error){
-//     console.log("Error contexto vacio:"+error);      //postman 
-//   }
 
-
-
-
-//   DBVDialogLib.addSugerencias(resultado,opciones);
-//   res.json(resultado);   //imprime el texto // devolucion de la peticio 
-// });
-
-
-// codigo  para que en el servidor firebase se inicie el proyecto
-
-
-// es un programa que responde a imagenes, navegador y a post 
-
-////////////////////////////////////////////////////////////////////
-//para cargar la libreria creada 
-
-// const DBVDialogLib= require('./DBVDialogLib');
-// const { leerUrlpromise } = require("./DBVDialogLib");
-
-
-
-
-// /////////////////////////////
-// //////////////////////////////
-// ////////////////////////////
-// else if (contexto==="aparcamientos_contarr"){;
-//   const reqUrl='https://datosabiertos.malaga.eu/api/3/action/datastore_search_sql?sql=SELECT count(*) from "0dcf7abd-26b4-42c8-af19-4992f1ee60c6"'
-//   DBVDialogLib,leerUrlpromise(reqUrl).then((respuesta)=>{
-//     let resultado;
-//     textoEnviar=respuesta.resultado.records[0],count + " aparcamientos";
-//     console.log((" en malaga hay "+ textoEnviar));
-//     resultado=DBVDialogLib.respuestaBasica(textoEnviar);
-//     DBVDialogLib.addSugerencias(resultado,opciones);
-//     res.json(resultado);
-//     return true;
-    
-//   }).catch((error)=>{
-//     console.log("error capturado en promise "+error);
-//     res.json(DBVDialogLib.respuestaBasica("Lo siento. No puedo contactar con el servidor externo"));
-    
-//   });
-
-//   /////////////////////////62 
-// else if (contexto==="aparcamientos_ocupacion"){;
-//   const aparcBuscado=req.body.queryResult.parameters.nombre;   ///el nombre se leee con req.body........parameter
-//   console.log("aparcBuscado= "+aparcBuscado);
-  
-//   const req=('https://datosabiertos.malaga.eu/api/3/action/datastore_search_sql?sql=SELECT * from "0dcf7abd-26b4-42c8-af19-4992f1ee60c6 WHERE upper(name)LIKE upper ('%${aparcBuscado}%')'); // crear una url con el nombre de los aparcamietien
-//   respuestaEnviada=true;
-//   DBVDialogLib,leerUrlpromise(reqUrl).then((respuesta)=>{
-//     let resultado;
-//     textoEnviar;
-//     console.log(("leer URL promise "+JSON.stringify(respuesta));
-//     const aparcamiento=respuesta.resultado.records[0];
-//     console.log("leerURL primise-aparcamiento: "+aparcamiento);
-//     if (aparcamiento.libres>0){
-//       textoEnviar +=' ${aparcamiento.nombre} situado en ${aparcamiento.direccion} disone de ${aparcamiento.capacidad}';
-//     } else {
-//       textoEnviar=' aparcamiento lleno '
-//     }
-//     console.log("resultado aparcamiento: "+textoEnviar);
-//     lo enviamos a dialogflow
-//     resultado=DBVDialogLib.respuestaBasica(textoEnviar)
-//     DBVDialogLib.addSugerencias(resultado,opciones);
-//     res.json(resultado);
-//     return true;
-//   }) .catch((error)=> {
-//     console.log("error capturado ce el parametro: "+error);
-//     res.json(DBVDialogLib.respuestaBasica("Lo siento. No encuentro ese aparcamoento "));
-//   });
+;
