@@ -206,15 +206,13 @@ if (req.body.queryResult.parameters) {
   resultado = DBVDialogLib.respuestaBasica(`Todavía no he aprendido a gestionar:${contexto}`);
 
 }
+
+
+if (!respuestaEnviada) {
   DBVDialogLib.addSugerencias(resultado, opciones);
   res.json(resultado);
-});
-
-// if (!respuestaEnviada) {
-//   DBVDialogLib.addSugerencias(resultado, opciones);
-//   res.json(resultado);
-// }
-// });   
+}
+});   
 
 //////////////////////////////////////////   codigo para fire base 
 /////////////////////////////////////////
