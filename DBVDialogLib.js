@@ -56,23 +56,9 @@ function addSugerencias(res,opciones){    // res=respuesta de las sugerencias   
           "suggestions": listaOpcionesGoogle(opciones)
             
         }
-    });
+        });
 }
-/**
- * 
- * @param {*} opciones recibe la lista de opciones
- * @returns Devuelve la lista en formato suggestions de google
- *         [{"title":"valor"},...]
- */
- function listaOpcionesGoogle(opciones) {
-    let res = [];
-    for (let i = 0; i < opciones.length; i++) {
-        res.push({ "title": opciones[i] })
-    }
-    return res;
-}
-
-//////////////////////49
+/////////////////////////48
 /**
  * 
  * @param {*} res Añade a una respuesta básica un card
@@ -95,7 +81,7 @@ function addSugerencias(res,opciones){    // res=respuesta de las sugerencias   
                 },
                 "buttons": [
                     {
-                        "title": `Más info. ${titulo}`,
+                        "title": `Más informacion de : ${titulo}`,
                         "openUriAction": {
                             "uri": url
                         }
@@ -104,6 +90,31 @@ function addSugerencias(res,opciones){    // res=respuesta de las sugerencias   
             }
         });
 }
+
+
+
+
+
+
+
+
+
+/**
+ * 
+ * @param {*} opciones recibe la lista de opciones
+ * @returns Devuelve la lista en formato suggestions de google
+ *         [{"title":"valor"},...]
+ */
+ function listaOpcionesGoogle(opciones) {
+    let res = [];
+    for (let i = 0; i < opciones.length; i++) {
+        res.push({ "title": opciones[i] })
+    }
+    return res;
+}
+
+
+
 
 //////////53
 /**

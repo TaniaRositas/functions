@@ -17,11 +17,11 @@ console.log(JSON.stringify(respuesta));      //para que nos imprima en forma de 
 ////añadiendo sugerencias
 let opciones=["opcion1","opcion2","opcion3"];
 DBVDialogLib.addSugerencias(respuesta,opciones);
-DBVDialogLib.addCard(respuesta,"antonio Banderas", "es un actor","antonio banderas.jpg","https://www.google.com/search?q=Antonio Banderas")
+DBVDialogLib.addCard(respuesta,"Antonio Banderas", "es un actor","antoniobanderas.jpg","https://www.google.com/search?q=Antonio Banderas")
 console.log(respuesta);
 console.log(JSON.stringify(respuesta));
 /////////48
-DBVDialogLib.addCard(respuesta,"antonio Banderas", "es un actor","antonio banderas.jpg","https://www.google.com/search?q=Antonio Banderas")
+DBVDialogLib.addCard(respuesta,"Antonio Banderas", "es un actor","antoniobanderas.jpg","https://www.google.com/search?q=Antonio Banderas")
 let personaje;
 try {
     personaje = req.body.queryResult.parameters.personaje;
