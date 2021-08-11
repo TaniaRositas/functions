@@ -63,6 +63,8 @@ if (req.body.queryResult.parameters) {
      console.log("Sin parámetros");
 ///////////////////45
   }
+  console.log(contexto);
+  
   if (contexto === "input.welcome") {
     /*********** input.welcome  ***********/
     textoEnviar = "Hola, soy el primer webhook";
