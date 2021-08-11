@@ -17,33 +17,34 @@ console.log(JSON.stringify(respuesta));      //para que nos imprima en forma de 
 ////añadiendo sugerencias
 let opciones=["opcion1","opcion2","opcion3"];
 DBVDialogLib.addSugerencias(respuesta,opciones);
+DBVDialogLib.addCard(respuesta,"antonio Banderas", "es un actor","antonio banderas.jpg","https://www.google.com/search?q=Antonio Banderas")
 console.log(respuesta);
 console.log(JSON.stringify(respuesta));
 /////////48
-// DBVDialogLib.addCard(respuesta,"antonio Banderas", "es un actor","antonio banderas,jpg","https://www.google.com/search?q=Antonio Banderas")
-// let personaje;
-// try {
-//     personaje = req.body.queryResult.parameters.personaje;
-// } catch (error) {
-//     console.log("error personaje no leido:" + error);
-// }
-// console.log("personaje=" + personaje);
+DBVDialogLib.addCard(respuesta,"antonio Banderas", "es un actor","antonio banderas.jpg","https://www.google.com/search?q=Antonio Banderas")
+let personaje;
+try {
+    personaje = req.body.queryResult.parameters.personaje;
+} catch (error) {
+    console.log("error personaje no leido:" + error);
+}
+console.log("personaje=" + personaje);
 
-// if (typeof (personaje) !== 'undefined') {
-//     console.log("existe");
-// } else {
-//     console.log("no existe");
+if (typeof (personaje) !== 'undefined') {
+    console.log("existe");
+} else {
+    console.log("no existe");
 
-// }
-// global.listaPersonajes = require("./personajes.json");
-// // si no existe un elemento de un array es undefined
-// console.log(global.listaPersonajes["Antonio Banderas"]);
-// if (global.listaPersonajes["Antonio Banders"]) {
-//     console.log("Personaje Existe");
-// } else {
-//     console.log("Personaje no existe");
+}
+global.listaPersonajes = require("./personajes.json");
+// si no existe un elemento de un array es undefined
+console.log(global.listaPersonajes["Antonio Banderas"]);
+if (global.listaPersonajes["Antonio Banderas"]) {
+    console.log("Personaje Existe");
+} else {
+    console.log("Personaje no existe");
 
-// }
+}
 
 // ///////////53
 // opciones=["opciin1","opciin2","opciin3","opciin4","opciin5","opciin6","opciin7","opciin8","opciin9","opciin10","opciin11","opciin12"];

@@ -72,7 +72,7 @@ function addSugerencias(res,opciones){    // res=respuesta de las sugerencias   
     return res;
 }
 
-
+//////////////////////49
 /**
  * 
  * @param {*} res Añade a una respuesta básica un card
