@@ -56,7 +56,7 @@ server.post("/curso", (req, res) => {
   } catch (error) {
     console.log("Error contexto vacio:" + error);
   }
-  res.json(resultado);
+
 if (req.body.queryResult.parameters) {
     console.log("parámetros:" + req.body.queryResult.parameters);
   } else {
