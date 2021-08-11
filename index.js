@@ -91,7 +91,7 @@ if (req.body.queryResult.parameters) {
       if (global.listaPersonajes[personaje]) {
         textoEnviar = global.listaPersonajes[personaje];
         let imagen = encodeURI(global.imagenes + personaje + ".jpg");
-        let url = "https://www.google.com/search?q=" + personaje;
+        let url = "https://www.google.com/search?gs_ssp=eJzj4tLP1TcwMTbLTq8yYPQSSMwryc_LzFdISsxLSS1KLAYAioQJ3A&q="+personaje;
         resultado = DBVDialogLib.respuestaBasica(`Me encanta ${personaje}`);
         DBVDialogLib.addCard(resultado, personaje, textoEnviar, imagen, url);
       } else {
