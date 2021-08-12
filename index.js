@@ -229,7 +229,7 @@ if (!respuestaEnviada) {
 
 server.listen((process.env.PORT || 3000), () => {
   console.log("Servidor funcionando...");         // si se ve en la terminal funciona 
-})
+});
 
 
 
