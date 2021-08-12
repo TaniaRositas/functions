@@ -13,6 +13,7 @@ const path = require('path');
 //Variables globales 
 global.listaPersonajes = require("./personajes.json");
 global.imagenes = "https://cbbh.herokuapp.com/imagenes/"  ///// esta url es de firebase
+global.ponentes=require("./ponentes.json");
 
 ///////////////////////////41
 // Guia de uso de Express https://expressjs.com/es/guide/routing.html
@@ -171,6 +172,27 @@ if (req.body.queryResult.parameters) {
       res.json(DBVDialogLib.respuestaBasica("Lo siento. No puedo contactar con servidor externo"));
 
     });
+    ///////////////66
+  } else if (contexto=== "ponente"){
+    try{
+      let ponente="";
+      ponente=req.body.queryResult.parameters.ponente;
+      textoEnviar=ponente +"es"+ global.ponentes[ponente].Cargo + "en" + global.ponentes[ponente].Institucion;
+      let imagen =global.ponentes[ponente].imagen;
+      let url= global.ponentes[ponente].url;
+      resultado=DBVDialogLib.respuestaBasica(textoEnviar);
+      DBVDialogLib.addCard(resultado,ponente,textoEnviar,imagen,url);
+      /// personalidad 
+      let arListaPersonajes=Object.keys(global.ponentes).slice();
+      opciones=DBVDialogLib.reducirAOcho(arListaPersonajes);
+      opciones.unshift("menu");
+
+    }catch(error){
+      textoEnviar="no conozco ese ponente";
+      resultado=DBVDialogLib.respuestaBasica(textoEnviar);
+    }
+  
+
     ////////////////////////////62
   } else if (contexto === "aparcamientos_ocupacion") {
     const aparcBuscado = req.body.queryResult.parameters.nombre; ///el nombre se leee con req.body........parameter
