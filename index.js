@@ -151,7 +151,7 @@ if (req.body.queryResult.parameters) {
       resultado = DBVDialogLib.respuestaBasica("Te ayudaré a encontrar un ordenador con esas características");
       let url = 'https://www.pccomponentes.com' +((tipopc)? "/" + tipopc : "") + ((discoduro) ? "/" + discoduro : "") + ((memoria) ? "/" + memoria : "") + ((marcapc) ? "/" + marcapc : "");
       DBVDialogLib.addEnlace(resultado, `Ver recomendación`, url);
-      //opciones = ["menu"];
+      opciones = ["Menú"];
     }
     ///////////////////////////////////61  APIs
   } else if (contexto === "aparcamientos_contar") {
