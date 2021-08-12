@@ -137,11 +137,11 @@ if (req.body.queryResult.parameters) {
       resultado = DBVDialogLib.respuestaBasica(textoEnviar);
     } else if (!memoria) {
       textoEnviar = 'Es necesario elegir el tamaño de la memoria:';
-      opciones = ["4 Gb", "8 Gb", "16 Gb", "32 Gb"];
+      opciones = ["4-gb-ram", "8-gb-ram", "16-gb-ram", "32-gb-ram"];
       resultado = DBVDialogLib.respuestaBasica(textoEnviar);
     } else if (!discoduro) {
       textoEnviar = 'Ahora veremos el almacenamiento en disco:';
-      opciones = ["1 Tb", "2 Tb", "4 Tb"];
+      opciones = ["1-tb", "2-tb", "3-tb"];
       resultado = DBVDialogLib.respuestaBasica(textoEnviar);
     } else if (!marcapc) {
       textoEnviar = "Vamos a ver que marca te gustaría consultar:";
@@ -152,7 +152,7 @@ if (req.body.queryResult.parameters) {
       resultado = DBVDialogLib.respuestaBasica("Te ayudaré a encontrar un ordenador con esas características");
       let url = 'https://www.pccomponentes.com' +((tipopc)? "/" + tipopc : "") + ((discoduro) ? "/" + discoduro : "") + ((memoria) ? "/" + memoria : "") + ((marcapc) ? "/" + marcapc : "");
       DBVDialogLib.addEnlace(resultado, `Ver recomendación`, url);
-      opciones = ["Menú"];
+      opciones = ["menu"];
     }
     ///////////////////////////////////61  APIs
   } else if (contexto === "aparcamientos_contar") {
