@@ -156,32 +156,32 @@ function addEnlace(res,texto,url){
 }
 
 
-// /**
-// {
-//     "platform": "ACTIONS_ON_GOOGLE",
-//     "linkOutSuggestion": {
-//       "destinationName": "Ver ordenador portatiles con disco duro de 1-tb, 8-gb-ram y de la marca msi",
-//       "uri": "https://www.pccomponentes.com/portatiles/1-tb/8-gb-ram/msi"
-//     }
-//   }
-// */
-// /**
-//  * Esta función añade un enlace en la conversación
-//  * @param {*} res respuesta a la que se añade el enlace
-//  * @param {*} texto texto a añadir en el enlace
-//  * @param {*} url dirección a la que apuntará el enlace.
-//  */
-//  function addEnlace(res,texto,url) {
-//     res.fulfillmentMessages.push(
-//     {
-//         "platform": "ACTIONS_ON_GOOGLE",
-//         "linkOutSuggestion": {
-//           "destinationName": texto,
-//           "uri": url
-//         }
-//       }    
-//     );
-// }
+/**
+{
+    "platform": "ACTIONS_ON_GOOGLE",
+    "linkOutSuggestion": {
+      "destinationName": "Ver ordenador portatiles con disco duro de 1-tb, 8-gb-ram y de la marca msi",
+      "uri": "https://www.pccomponentes.com/portatiles/1-tb/8-gb-ram/msi"
+    }
+  }
+*/
+/**
+ * Esta función añade un enlace en la conversación
+ * @param {*} res respuesta a la que se añade el enlace
+ * @param {*} texto texto a añadir en el enlace
+ * @param {*} url dirección a la que apuntará el enlace.
+ */
+ function addEnlace(res,texto,url) {
+    res.fulfillmentMessages.push(
+    {
+        "platform": "ACTIONS_ON_GOOGLE",
+        "linkOutSuggestion": {
+          "destinationName": texto,
+          "uri": url
+        }
+      }    
+    );
+}
 
 
 ///////////////////////61 

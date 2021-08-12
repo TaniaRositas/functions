@@ -172,25 +172,7 @@ if (req.body.queryResult.parameters) {
       res.json(DBVDialogLib.respuestaBasica("Lo siento. No puedo contactar con servidor externo"));
 
     });
-    ///////////////66
-  } else if (contexto=== "ponente"){
-    try{
-      let ponente="";
-      ponente=req.body.queryResult.parameters.ponente;
-      textoEnviar=ponente +"es"+ global.ponentes[ponente].Cargo + "en" + global.ponentes[ponente].Institucion;
-      let imagen =global.ponentes[ponente].imagen;
-      let url= global.ponentes[ponente].url;
-      resultado=DBVDialogLib.respuestaBasica(textoEnviar);
-      DBVDialogLib.addCard(resultado,ponente,textoEnviar,imagen,url);
-      /// personalidad 
-      let arListaPersonajes=Object.keys(global.ponentes).slice();
-      opciones=DBVDialogLib.reducirAOcho(arListaPersonajes);
-      opciones.unshift("menu");
-
-    }catch(error){
-      textoEnviar="no conozco ese ponente";
-      resultado=DBVDialogLib.respuestaBasica(textoEnviar);
-    }
+ 
   
 
     ////////////////////////////62
@@ -224,6 +206,25 @@ if (req.body.queryResult.parameters) {
     res.json(DBVDialogLib.respuestaBasica("Lo siento. No encuentro ese aparcamiento"));
     
   });
+     ///////////////66
+  } else if (contexto=== "ponente"){
+    try{
+      let ponente="";
+      ponente=req.body.queryResult.parameters.ponente;
+      textoEnviar=ponente +"es"+ global.ponentes[ponente].Cargo + "en" + global.ponentes[ponente].Institucion;
+      let imagen =global.ponentes[ponente].imagen;
+      let url= global.ponentes[ponente].url;
+      resultado=DBVDialogLib.respuestaBasica(textoEnviar);
+      DBVDialogLib.addCard(resultado,ponente,textoEnviar,imagen,url);
+      /// personalidad 
+      let arListaPersonajes=Object.keys(global.ponentes).slice();
+      opciones=DBVDialogLib.reducirAOcho(arListaPersonajes);
+      opciones.unshift("menu");
+
+    }catch(error){
+      textoEnviar="no conozco ese ponente";
+      resultado=DBVDialogLib.respuestaBasica(textoEnviar);
+    }
 
   } else {
   // Se recibe un action desconocido (contexto)
