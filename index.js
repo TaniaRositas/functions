@@ -88,7 +88,7 @@ if (req.body.queryResult.parameters) {
       let arListaPersonajes = Object.keys(global.listaPersonajes).slice();
       // Vamos a personalizar las opciones para que aparezcan como sugerencias otros personajes y el menú
       opciones = arListaPersonajes
-      opciones.unshift("Menú");
+      opciones.unshift("menu");
       // si ha llegado parametro personaje y está en la lista
       if (global.listaPersonajes[personaje]) {
         textoEnviar = global.listaPersonajes[personaje];
@@ -110,7 +110,7 @@ if (req.body.queryResult.parameters) {
     let arListaPersonajes = Object.keys(global.listaPersonajes).slice();
     // Vamos a personalizar las opciones para que aparezcan como sugerencias otros personajes y el menú
     opciones = arListaPersonajes.slice();
-    opciones.unshift("Menú");
+    opciones.unshift("menu");
     resultado = DBVDialogLib.respuestaBasica("Te muestro algunos personajes que conozco...");
 ///////////52
   } else if (contexto === "menu") {
@@ -151,7 +151,7 @@ if (req.body.queryResult.parameters) {
       resultado = DBVDialogLib.respuestaBasica("Te ayudaré a encontrar un ordenador con esas características");
       let url = 'https://www.pccomponentes.com' + ((tipopc) ? "/" + tipopc : "") + ((discoduro) ? "/" + discoduro : "") + ((memoria) ? "/" + memoria : "") + ((marcapc) ? "/" + marcapc : "");
       DBVDialogLib.addEnlace(resultado, `Ver recomendación`, url);
-      opciones = ["Menú"];
+      opciones = ["menu"];
     }
     ///////////////////////////////////61  APIs
   } else if (contexto === "aparcamientos_contar") {
