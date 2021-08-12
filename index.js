@@ -87,7 +87,7 @@ if (req.body.queryResult.parameters) {
     if (personaje) {
       let arListaPersonajes = Object.keys(global.listaPersonajes).slice();
       // Vamos a personalizar las opciones para que aparezcan como sugerencias otros personajes y el menú
-      opciones = arListaPersonajes;
+      opciones = arListaPersonajes
       opciones.unshift("Menú");
       // si ha llegado parametro personaje y está en la lista
       if (global.listaPersonajes[personaje]) {
