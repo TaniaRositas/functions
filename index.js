@@ -12,7 +12,7 @@ const path = require('path');
 /////////////////49
 //Variables globales 
 global.listaPersonajes = require("./personajes.json");
-global.imagenes = "https://cbbh.herokuapp.com/curso/imagenes/"  ///// esta url es de firebase
+global.imagenes = "https://cbbh.herokuapp.com/imagenes/"  ///// esta url es de firebase
 
 ///////////////////////////41
 // Guia de uso de Express https://expressjs.com/es/guide/routing.html
