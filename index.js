@@ -48,8 +48,8 @@ server.post("/curso", (req, res) => {
   let respuestaEnviada = false;
   let textoEnviar = 'recibida petición post incorrecta';
   ////////46
-  let opciones = ["Chiste", "Consejo", "Noticias", "Mi Equipo", "Personaje"];
-  //let opciones = DBVDialogLib.reducirAOcho(["Chiste", "Consejo", "Noticias", "Mi Equipo", "Personaje"]);
+  //let opciones = ["Chiste", "Consejo", "Noticias", "Mi Equipo", "Personaje"];
+  let opciones = DBVDialogLib.reducirAOcho(["Chiste", "Consejo", "Noticias", "Mi Equipo", "Personaje"]);
   try {
     contexto = req.body.queryResult.action;
     textoEnviar = `recibida petición de accion  ${contexto}`;

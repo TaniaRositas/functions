@@ -46,21 +46,21 @@ if (global.listaPersonajes["Antonio Banderas"]) {
 
 }
 
-// ///////////53
-// opciones=["opciin1","opciin2","opciin3","opciin4","opciin5","opciin6","opciin7","opciin8","opciin9","opciin10","opciin11","opciin12"];
-// function reducirAOcho(opciones) {
-//     let res = []; // array resultado con 8 opciones ordenadas de forma aleatoria
-//     let i = 0; // contador bucle
-//     let pos; // posición seleccionada
-//     while (i < 8 && opciones.length > 0) {
-//         pos = Math.floor(Math.random() * opciones.length);
-//         res.push(opciones[pos]);
-//         opciones.splice(pos, 1);
-//         i++;
-//     }
-//     return res;
-// }
-// console.log(reducirAOcho(opciones));
+///////////53
+opciones=["opcion1","opcion2","opcion3","opcion4","opcion5","opcion6","opcion7","opcion8","opcion9","opcion10","opcion11","opcion12"];
+function reducirAOcho(opciones) {
+    let res = []; // array resultado con 8 opciones ordenadas de forma aleatoria
+    let i = 0; // contador bucle
+    let pos; // posición seleccionada
+    while (i < 8 && opciones.length > 0) {
+        pos = Math.floor(Math.random() * opciones.length);
+        res.push(opciones[pos]);
+        opciones.splice(pos, 1);
+        i++;
+    }
+    return res;
+}
+console.log(reducirAOcho(opciones));
 
 // ////////////55 slotfilling
 // let tipopc = "sobremesa";

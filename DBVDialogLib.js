@@ -126,7 +126,7 @@ function addSugerencias(res,opciones){    // res=respuesta de las sugerencias   
     let res = []; // array resultado con 8 opciones ordenadas de forma aleatoria
     let i=0; // contador bucle
     let pos; // posición seleccionada
-    while (i<8&&opciones.length>0) {
+    while (i<8 && opciones.length>0) {
         pos=Math.floor(Math.random()*opciones.length); 
         res.push(opciones[pos]);
         opciones.splice(pos,1);
